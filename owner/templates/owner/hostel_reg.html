@@ -1,0 +1,170 @@
+{% extends 'owner\signup2.html' %}
+{% load static %}
+{% block link %}
+    <style>
+        h5 {
+          margin: 15px;
+        }
+      </style>
+      {% endblock %}
+      
+      {% block content %}
+      <h4 class="m-3">Property Details</h4>
+      {% csrf_token %}
+      <div class=" border border-secondary rounded">
+      
+        <h5> property details</h5>
+      
+        <div class="row ">
+      
+          <div class="col col-lg-3">
+            <label>Name of your Property </label>
+            <input type="text" class="form-control " id="email" placeholder="State" name="name" required>
+          </div>
+      
+          <div class="col-sm-6 mt-md-0 mt-3">
+            <label>Size of your property </label>
+            <input type="number" class="form-control x" id="size" placeholder="0 sqft" name="size" required>
+          </div>
+      
+        </div>
+      
+        <h5>Rooms and details</h5>
+        <div class="row ">
+      
+          <div class="col">
+            <label>Total number of rooms</label>
+            <input type="number" class="form-control " name="no_of_people" placeholder="0" required>
+          </div>
+          <div class="col">
+            <label>Total available of rooms</label>
+            <input type="number" class="form-control " name="total_available_rooms" placeholder="0" required>
+          </div>
+     
+          <div class="col">
+            <label>Type of rooms</label><br>
+            <label class="text-secondary" for="" >single room</label>
+            <input type="checkbox" value="single room" name="single_room"><br>
+      
+            <label class="text-secondary" for="">2 peoples in one room</label>
+            <input type="checkbox" value="two in 1 room" name="two_pepople"><br>
+            <label class="text-secondary" for="">3 peoples in one room</label>
+            <input type="checkbox" value="three in 1 room" name="three_people"><br>
+            <label class="text-secondary" for="" >and more</label>
+            <input type="checkbox" value=" more" name="more">
+      
+            
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <label>Bathrooms</label><br>
+            
+            <label class="text-secondary" for="">Attached bathrooms</label>
+            <input type="checkbox" value="attached_rooms" name="attached_rooms"><br>
+          
+          </div>
+     
+          <div class="col">
+            <label>Mess available </label> <br>
+           <label for=""><input type="radio" value="no" name="no">NO</label>
+          <Label><input type="radio" value="yes" name="yes">YES</Label>
+          </div>
+      
+          <div class="col">
+            <label>Mess fees</label>
+            <input type="number" class="form-control " id="no_of_people" placeholder="0" name="size" >
+          </div>
+      
+      
+        </div>
+      
+        <h5>Location</h5>
+      
+        <div class="row">
+      
+          <div class="col">
+            <label> Address </label>
+            <textarea required id="textarea" name="address" cols="30" placeholder="Address" class="form-control " rows="3"></textarea>
+          </div>
+      
+          <div class="col">
+            <label>State</label>
+            <input required type="text" class="form-control " id="email" placeholder="State" name="email">
+      
+          </div>
+      
+          <div class="col">
+            <label>City</label>
+            <input required type="number" class="form-control " placeholder="City" id="number" name="phone">
+          </div>
+      
+          <div class=" col">
+            <label>pin code</label>
+            <input required type="number" class="form-control " name="photo" placeholder="pin code">
+          </div>
+      
+        </div>
+        <h5>Why should people choose your property</h5>
+      
+        <div class="row">
+      
+          <div class="col col-lg-3">
+            <label>Transportation </label><br>
+            <label class="text-secondary" for="">bus service available</label>
+            <input type="checkbox" value="bus" name="bus"><br>
+      
+            <label class="text-secondary" for="">near to railway station</label>
+            <input type="checkbox" value="train" name="train"><br>
+            <label class="text-secondary" for="">near to airport</label>
+            <input type="checkbox" value="flight" name="flight">
+      
+          </div>
+      
+      
+         
+          <div class="col">
+            <label>Upload photos</label><br>
+            <input type="file" placeholder="upload photos" required>
+          </div>
+        </div>
+      
+        <h5>map loction </h5>
+        <div class="row">
+          <br>
+          <div class="col">
+      
+          </div>
+      
+        </div>
+        <div class="row">
+          <div class="col col-lg-3">
+            <label>Set Your price</label><br>
+            
+              <input type="number" class="form-control " placeholder="single room">
+              <input type="number" class="form-control " placeholder="2 in 1 room">
+              
+            </div>
+            <div class="col">
+              <label>Payment methode</label><br>
+      
+              <input type="text" placeholder="online payment">
+            </div>
+           
+          </div>
+        </div>
+        <br>
+        <a href="{% url 'owner:list_property' %}" id="btn"> <input type="submit" class="btn btn-primary "
+            onclick=" return validation()"></a>
+      
+      
+      
+      
+        </form>
+      </div>
+      
+      </div>
+      {% endblock %}
+</body>
+</html>

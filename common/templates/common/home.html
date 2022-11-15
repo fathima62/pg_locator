@@ -1,0 +1,393 @@
+{% extends 'common\masterpage.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<!-- customer Sign up -->
+
+
+
+<div class="modal " id="customer_signup" style="width: 550px; margin: 0;">
+
+  <div class=" modal-dialog bg-light border  rounded shadow text-center">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h2>Sign up</h2>
+        <div>already have an account?<a href="{% url 'owner:owner_login' %}" data-bs-toggle="modal"
+            data-bs-target="#customer_login">Login</a>
+        </div>
+        <form method="POST">
+          {% csrf_token %}
+
+          <input type="text" class="form-control shadow" placeholder="Full_name" id="name" name="first_name"><span
+            id="error_msg1"></span><br>
+          <input type="text" class="form-control shadow" placeholder="Second_name" name="second_name"><br>
+
+          <input type="text" class="form-control shadow" id="email" placeholder="Email" name="email"><span
+            id="error_msg2"></span><br>
+
+
+          <input type="number" class="form-control shadow" placeholder="Phone" id="number" name="phone"><span
+            id="error_msg3"></span> <br>
+
+
+          <textarea name="address" cols="30" placeholder="Address" class="form-control shadow" rows="3"></textarea><br>
+
+
+          <input type="password" class="form-control shadow" id="password" placeholder="Password" name="password"><span
+            id="error_msg4"></span>
+          <input type="checkbox" id="checkbox" onchange="show_password()"> <span class="text-secondary">Show
+            password</span>
+
+          <input type="password" class="form-control shadow" placeholder="Confirm password" name="password"
+            id="confirm"> <span id="error_msg5"></span> <br>
+
+
+          <button id="btn" onclick=" return validation()" class="btn btn-danger  btn-sm" type="submit"
+            name="customer_signup">Signup</button>
+          <a href="{% url 'common:home' %}" class="btn btn-primary btn-sm">cancel</a>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<span>{{msg}}</span>
+<!-- customer login  -->
+<div id="customer_login" class="modal">
+  <div class="modal-dialog ">
+    <div class="modal-content  ">
+
+      <div class="modal-body bg-light ">
+
+        <form action="" class="form rounded border-light  " action="" method="POST">
+          {% csrf_token %}
+          <h3 class="text-center text-info ">Login</h3>
+
+          <label for="" class="text-info"> User name : </label> <br>
+          <input id="c_email" name="c_email" type="email" class="form-control  " placeholder="username">
+          <span id="error_message"></span><br>
+          <label for="" class="text-info"> Password : </label>
+          <input id="c_password" type="password" name="c_password" class="form-control   text-secondary"
+            placeholder="password"><span id="error_password"></span><br> <span class="text-secondary ">show
+            password</span><input id="c_checkbox" type="checkbox" onchange="password()">
+          <br>
+          <div>
+            <input type="submit" name="c_login" class=" btn btn-info btn-md bg-info shadow " value="submit"
+              style="margin-top:10px ;" onclick="return valid()">
+          </div>
+          <div id="register-link" class="text-right">
+            <a href="{% url 'owner:signup' %}" style="padding-left: 300px;" class="text-danger" data-bs-toggle="modal"
+              data-bs-target="#customer_signup">Register here</a>
+          </div>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+<br><br>
+<div class="card text-center p-5  mt-5 " id="img">
+  <div class="card-header text-secondary-50  fs-3">
+    Find Your Stay
+  </div>
+
+  <form class="d-flex mt-5 mb-5" style="padding-left:  580px;">
+    <div>
+      <div class="input-group " style="height: 50px; width: 680px;">
+        <input type="search" class="form-control border border-danger text-danger" style="width: 230px;"
+          placeholder="Search your location" aria-label="Search" aria-describedby="search-addon" />
+        <select class="form-control  border border-danger text-light bg-danger bg-opacity-75" name="" id="">
+          <option class="bg-light text-dark" value="">Select type</option>
+          <option class="bg-light text-dark" value="flats/independent home">Flat/independent home
+          </option>
+          <option class="bg-light text-dark" value="hostels/">hostels</option>
+          <option class="bg-light text-dark" value="pg_homes">Pg Homes</option>
+        </select><br>
+        <input type="date" style="width: 30px; " placeholder="select you date"
+          class="form-control  border border-danger text-light bg-danger bg-opacity-75"><br>
+
+        <button type="button" class="btn btn-outline-danger">search</button>
+
+      </div>
+
+
+    </div><br>
+
+  </form>
+
+  <!-- <a href="#" class="btn btn-primary">Location</a> -- -->
+
+
+
+</div>
+<div class="card text-center p-5  mt-5  " id="brows_by_property">
+  <div class="card-header text-secondary-50  fs-3">
+    Brows by propert type
+  </div>
+
+
+
+  <div class="row fw-bolder">
+    <div class="col col-sm-3 btn" style="width: 25rem; height: 20rem;">
+      <div class="card">
+        <div class="card-body btn">
+          <img height="250px" width="350px"
+            src="https://media.istockphoto.com/id/1354262369/photo/mock-up-poster-frame-in-modern-interior-background-living-room-scandinavian-style-3d-render.jpg?b=1&s=170667a&w=0&k=20&c=_Hy3y9kx7kUejKVbdcwAHJpzQwrntc16jA1Tq6YmF00="
+            alt=>
+
+        </div>
+        <a href="#" class="btn btn-outline-secondary" style="margin-top:3px ;">Hostels</a>
+      </div>
+    </div>
+
+
+    <div class="col col-sm-3 btn" style="width: 25rem; height: 20rem;">
+      <div class="card ">
+        <div class="card-body">
+
+          <img height="250px" width="350px"
+            src="https://thumbs.dreamstime.com/b/blank-picture-frame-wall-minimalist-modern-living-room-interior-background-mock-up-scandinavian-style-d-rendering-194411874.jpg"
+            alt="">
+
+
+        </div>
+        <a href="#" class="btn  btn-outline-secondary " style="margin-top:3px ;">Independent
+          Property/Flats</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<script>
+  // signup validation
+  function validation() {
+    var first_name = document.getElementById('name').value
+    var email = document.getElementById('email').value
+    var num = document.getElementById('number').value
+    var password = document.getElementById('password').value
+    var confirm_password = document.getElementById('confirm').value
+    var email_pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\.[com]{2,}$"
+    var name_pattern = "[A-Za-z]{3}$"
+    var phone_pattern = "[^\d]{10}$"
+    var password_pattern = "[a-zA-Z0-9!@#\$%\^\&*_=+-]{8,12}$"
+    var check_status = 1
+
+
+    if (first_name == '') {
+
+      document.getElementById('error_msg1').innerHTML = 'please fill out this field'
+      document.getElementById('name').style.border = 'red 1px solid'
+      document.getElementById('error_msg1').style.color = 'red'
+
+      check_status = 0
+
+
+    }
+
+    else {
+
+
+      if (first_name.match(name_pattern) == null) {
+
+        document.getElementById('error_msg1').innerHTML = 'name must contains character only'
+        document.getElementById('name').style.border = 'red 1px solid'
+        document.getElementById('error_msg1').style.color = 'red'
+        check_status = 0
+
+
+      }
+      else {
+        document.getElementById('error_msg1').innerHTML = ''
+        document.getElementById('name').style.border = 'black 1px solid'
+      }
+
+
+    }
+
+
+    if (email == '') {
+      document.getElementById('error_msg2').innerHTML = ' Please enter  email address'
+      document.getElementById('email').style.border = 'red 1px solid'
+      document.getElementById('error_msg2').style.color = 'red'
+      check_status = 0
+
+    }
+    else {
+
+      if (email.match(email_pattern) == null) {
+        document.getElementById('error_msg2').innerHTML = 'email format incorect'
+        document.getElementById('error_msg2').style.color = 'red'
+        document.getElementById('email').style.border = 'red 1px solid'
+        check_status = 0
+      }
+      else {
+
+        document.getElementById('error_msg2').innerHTML = ''
+        document.getElementById('email').style.border = 'black 1px solid'
+      }
+
+
+    }
+    if (num == '') {
+      document.getElementById('error_msg3').innerHTML = ' Please enter Mobile number'
+      document.getElementById('number').style.border = 'red 1px solid'
+      document.getElementById('error_msg3').style.color = 'red'
+      check_status = 0
+    }
+    else {
+      if (num.match(phone_pattern) == null) {
+        document.getElementById('error_msg3').innerHTML = 'mobile number is invalid '
+        document.getElementById('error_msg3').style.color = 'red'
+        document.getElementById('number').style.border = 'red 1px solid'
+
+        check_status = 0
+      }
+      else {
+        document.getElementById('error_msg3').innerHTML = ''
+        document.getElementById('number').style.border = 'black 1px solid'
+      }
+    }
+
+    if (password == '') {
+      document.getElementById('error_msg4').innerHTML = ' Please enter password'
+      document.getElementById('password').style.border = 'red 1px solid'
+      document.getElementById('error_msg4').style.color = 'red'
+      check_status = 0
+
+    }
+    else {
+      if (password.match(password_pattern) == null) {
+        document.getElementById('error_msg4').innerHTML = 'password contain at least one number ,uppercase, lowercase letter,special character and 8 or more characters'
+        document.getElementById('password').style.border = 'red 1px solid'
+        document.getElementById('error_msg4').style.color = 'red'
+        check_status = 0
+      }
+      else {
+        document.getElementById('error_msg4').innerHTML = ''
+        document.getElementById('password').style.border = 'black 1px solid'
+
+      }
+
+    }
+
+    if (confirm_password != password) {
+      document.getElementById('error_msg5').innerHTML = 'Should be match with password'
+      document.getElementById('error_msg5').style.color = 'red'
+      document.getElementById('confirm').style.border = 'red solid 1px'
+      check_status = 0
+
+    }
+    else {
+      document.getElementById('error_msg5').innerHTML = ''
+      document.getElementById('confirm').style.border = 'black solid 1px'
+    }
+
+
+
+    if (check_status == 0) {
+      return false
+    }
+    else {
+      location.href = "{% url 'owner:signup' %}"
+    }
+  }
+  function show_password() {
+    if (document.getElementById('checkbox').checked == true) {
+      document.getElementById('password').type = 'text'
+      document.getElementById('confirm').type = 'text'
+
+    }
+    else {
+      document.getElementById('password').type = 'password'
+    }
+  }
+
+  // login validation
+  function valid() {
+    var username = document.getElementById('c_email').value
+    var password = document.getElementById('c_password').value
+    var checkbox = document.getElementById('checkbox').value
+    var check_status = 1
+
+
+
+    if (username == '') {
+      document.getElementById('error_message').innerHTML = 'Fill out this field'
+      document.getElementById('error_message').style.color = 'red'
+      var check_status = 0
+    }
+    else {
+      document.getElementById('error_message').innerHTML = ''
+    }
+    if (password == '') {
+      document.getElementById('error_password').innerHTML = 'Fill out this field'
+      document.getElementById('error_password').style.color = 'red'
+      var check_status = 0
+    }
+    else {
+      document.getElementById('error_password').innerHTML = ''
+    }
+    if (check_status == 0) {
+      return false
+    }
+    else {
+      location.href = "{% url 'common:home' %}"
+    }
+  }
+
+  function password() {
+    if (document.getElementById('c_checkbox').checked == true) {
+      document.getElementById('c_password').type = 'text'
+
+    }
+    else {
+      document.getElementById('c_password').type = 'password'
+    }
+  }
+
+
+  $(document).ready(function () {
+    $.ajaxSetup({
+      headers: {
+        "X-CSRFtoken": $('[name=csrfmiddlewaretoken]').val()
+      }
+    })
+    $('#email').change(function () {
+      var email = $('#email').val()
+      $.ajax({
+        type: 'POST',
+        url: '{% url "common:email_exist" %}',
+        data: {
+          'email': email
+        },
+        success: function (response) {
+          if (response.status == true) {
+
+            $('#error_msg2').css('color', 'red')
+          }
+          else {
+            $('#error_msg2').html('email available')
+          }
+
+        }
+      })
+    })
+  })
+
+
+</script>
+
+{% endblock %}

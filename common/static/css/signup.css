@@ -1,0 +1,36 @@
+body{
+    background-color: rgb(220, 216, 209);
+}
+#div1{
+    background:rgb(203, 182, 182);
+    width: 500px;
+  color:rgb(15, 15, 38);
+    margin-left: 300px;
+    
+    
+}
+#h2{
+   font-family: Arial, Helvetica, sans-serif;
+   text-align: center;
+   padding-top: 10px;
+   padding-bottom: 20px;
+}
+#div2{
+    width: 200px;
+    padding-left: 20px;
+    padding-top: 20px
+    
+   
+}
+#div3{
+    padding-top:20px ;
+    width: 200px;
+    float:right;
+}
+#btn{
+    margin-left: 220px;
+   
+}
+span{
+    size: 1px;
+}

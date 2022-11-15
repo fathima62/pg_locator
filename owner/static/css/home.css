@@ -1,0 +1,33 @@
+/* body{
+    background-image:url ('https://ceblog.s3.amazonaws.com/wp-content/uploads/2018/08/20142404/best-homepage-15.png');
+} */
+#body{
+     background-image:url(''); 
+     background-repeat: none ;
+}
+#div3{
+margin-left: 110px;
+position: fixed;
+bottom: 0;
+
+ }
+#div1{
+    margin-right: 150px;
+    margin-top: 30px;
+}
+#div2{
+    margin-left: 150px;
+}
+
+#footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.border-bottom{
+    position: fixed;
+    top: 0;
+    width: 100%;
+  
+  
+}

@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    height: 100vh;
+}
+#div1{
+    margin-top: 120px;
+  max-width: 600px;
+  height: 370px;
+  border: 1px solid #9C9C9C;
+  background-color: white;
+   margin-top: 120px;
+  max-width: 600px;
+  padding-left: 100px;
+  padding-right: 100PX;
+  padding-top: 50px;
+  margin-left: 400px;
+}
+.btn{
+    margin-left: 160px;
+    border: 1px solid #9C9C9C;
+    margin-top: 15px;
+    
+}
+ #register-link {
+    margin-top: -55px;
+    padding-left: 300px;
+  }

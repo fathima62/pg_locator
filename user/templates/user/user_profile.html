@@ -1,0 +1,98 @@
+{% extends 'common\masterpage.html' %}
+
+{% load static %}
+
+{% block title %}Profile Page{% endblock %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/profile1.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+{% endblock %}
+
+
+
+{% block content %}
+<!-- Navbar top -->
+<div class="navbar-top" style="margin-top: 150px;">
+    <div class="title">
+        <h1>Profile</h1>
+    </div>
+
+
+</div>
+
+
+<!-- Sidenav -->
+<div class="sidenav">
+    <div class="profile">
+
+
+        <div class="name">
+            {{ user_profile.first_name |upper}}
+        </div>
+
+    </div>
+
+    <div class="sidenav-url">
+        <div class="url">
+            <a href="#profile" class="active">Edit Profile</a>
+            <hr align="center">
+        </div>
+    </div>
+</div>
+<!-- End -->
+
+<!-- Main -->
+<div class="main">
+    <h2>IDENTITY</h2>
+    <div class="card">
+        <div class="card-body">
+            <form action="" method="POST">
+            <a href=""><i class="fa fa-pen fa-xs edit"></i></a>
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td>First Name</td>
+                        <td>:</td>
+                        <td> <input type="text" value="{{ user_profile.first_name |title}}"></td>
+                    </tr>
+                  
+                    <tr>
+                        <td>Second Name</td>
+                        <td>:</td>
+                        <td><input type="text" value="{{ user_profile.second_name |title}}"> </td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>:</td>
+                        <td> <input type="text" value=" {{ user_profile.c_phone |title}}"></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td> <input type="text" value="{{user_profile.c_email |title}}"> </td>
+                    </tr>
+
+                    <tr>
+                        <td>Address</td>
+                        <td>:</td>
+                        <td><input type="text" value="{{ user_profile.c_address |title}}"> </td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td>:</td>
+                        <td><input type="text" value="{{ user_profile.c_password |title}}"> </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </form>
+        <button type="submit" class="btn btn-primary"> save changes</button>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

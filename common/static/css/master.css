@@ -1,0 +1,21 @@
+/* body{
+    background-image: url('https://media.istockphoto.com/id/1322375999/photo/abstract-pastel-yellow-studio-background-for-product-presentation-empty-room-with-shadows-of.jpg?b=1&s=170667a&w=0&k=20&c=5k3Id7Hg4REtCud_ZzxWwSsgCWOaEJ4pYQyOWyG6B4E=');
+} */
+#img{
+   
+    background-image: url('https://st.depositphotos.com/36879126/51394/i/450/depositphotos_513948989-stock-photo-empty-living-room-sofa-table.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px;
+
+}
+#footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+#brows_by_property{
+    
+    margin-bottom: 50px;
+}

@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="{% static 'js/signup.js' %}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/new_signup.css' %}">
+<style>
+        .row{
+          
+          margin-left: 50px;
+        }
+        input[type=number]{
+          width: 300px;
+        }
+        input[type=text]{
+          width: 300px;
+        }
+        input[type=password]{
+          width: 300px;
+        }
+        
+        #textarea{
+            width: 300px;
+        }
+        input[type=file]{
+          width:300px;;
+        }
+        input[type=checkbox]{
+          width:15px;;
+        }
+        .cancel{
+          position: absolute;
+          margin-top: -50px;
+        }
+</style>
+
+    {% block link %}{% endblock %}
+</head>
+
+<body>
+    <div class="wrapper rounded bg-white mt-2  ">
+
+        
+        <span class="text-secondary me-5 ">All information is required unless marked optional </span>
+        {% block content %}
+        
+                {% endblock %}
+            </div>
+        </form>
+        <a href="{% url 'owner:list_property' %}"><span class="btn btn-danger btn-sm ms-5 mt-1" style="margin-top:-50px ;" id="cancel">cancel</span></a>
+        
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+

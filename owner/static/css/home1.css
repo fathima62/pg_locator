@@ -1,0 +1,44 @@
+#navbar{
+    background-color: rgb(230, 240, 249);
+    background-image: url('https://img.staticmb.com/mbcontent/images/uploads/2020/7/rent.jpgq');
+    background-repeat: no-repeat;
+    height: 500px;
+}
+
+#btn{
+    padding-left: 1000px;
+    margin-top: -400px;
+    position:absolute;
+   
+    
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+   
+  
+}
+#div1{
+    font-size: 18px;
+    width: 500px;
+    margin: 25px;
+    height: 250px;
+  
+  
+}
+h1{
+    margin-bottom: 50px;
+    margin: 25px;
+}
+span{
+    margin: 55px;
+}
+#list_property{
+    margin-top: 25px;
+    margin-left: 140px;
+    
+}
+#footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
